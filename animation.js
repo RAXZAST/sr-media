@@ -61,6 +61,16 @@ gsap.from(".sec9 *", {
         trigger: ".sec9 *",
     }
 })
+gsap.from(".sec10 *", {
+    transform: "translateY(20%)",
+    opacity: 0,
+    stagger: 0.1,
+    duration: 1.5,
+    scrollTrigger:{
+        scroller: "body",
+        trigger: ".sec10 *",
+    }
+})
 gsap.from("footer *", {
     transform: "translateY(20%)",
     opacity: 0,
