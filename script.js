@@ -89,16 +89,13 @@ function removeControls() {
     // Section 9 custom dropdown menu functionality
 const dropdownContainer = document.querySelectorAll(".sec9 .container .dropdown")
 
-window.addEventListener("load", function () {
-    dropdownContainer.forEach(function (dropdown) {
-        dropdown.addEventListener("click", function (event) {
-            if (event.target.matches("button")) {
-                // Toggle 'open' class on the parent dropdown
-                event.target.classList.toggle("rotate")
-                this.classList.toggle("open");
-            }
-        });
-        dropdown.setAttribute("style", `--height: ${dropdown.scrollHeight + 8}px; transition: 0.3s;`)
-    })
+dropdownContainer.forEach(function (dropdown) {
+    dropdown.addEventListener("click", function (event) {
+        if (event.target.matches("button")) {
+            event.target.classList.toggle("rotate")
+            this.classList.toggle("open");
+        }
+    });
+    dropdown.setAttribute("style", `--height: ${dropdown.scrollHeight + 8}px; transition: 0.3s;`)
 })
 
