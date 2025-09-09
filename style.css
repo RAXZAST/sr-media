@@ -947,8 +947,8 @@ header nav #menu{
 .sec9 .container .open{
     height: var(--height2);
 }
-.sec9 .container .dropdown .head .rotate{
-    transform: rotate(180deg) !important;
+.sec9 .container .dropdown .rotate{
+    transform: rotate(180deg);
 }
 footer{
     display: flex;
