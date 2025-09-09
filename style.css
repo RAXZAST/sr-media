@@ -948,7 +948,7 @@ header nav #menu{
     height: var(--height2);
 }
 .sec9 .container .dropdown .rotate{
-    transform: rotate(180deg);
+    transform: rotate(180deg) !important;
 }
 footer{
     display: flex;
