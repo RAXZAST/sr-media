@@ -698,7 +698,7 @@ header nav #menu{
 .sec7 .container{
     background-color: transparent;
     width: 100vw;
-    padding: 50px clamp(200px, 10vw, 500px);
+    padding: 50px clamp(100px, 10vw, 400px);
     margin-top: 100px;
     display: flex;
     flex-direction: column;
@@ -706,6 +706,12 @@ header nav #menu{
     justify-content: center;
     gap: 150px;
     position: relative;
+}
+.sec7 .container #st5 .wrapper{
+    width: clamp(400px, 30vw, 450px) !important;
+}
+.sec7 .container #st3 .wrapper{
+    width: clamp(400px, 20vw, 500px) !important;
 }
 .sec7 .container .st{
     width: 100%;
@@ -823,6 +829,80 @@ header nav #menu{
     100%{
         bottom: 152px;
     }
+}
+.sec8-5{
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.sec8-5 .carousal{
+    margin-top: 50px;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: start;
+    -webkit-mask-image: linear-gradient(to left, transparent 10%, black 40%, black 60%, transparent 90%);
+}
+.sec8-5 .carousal .slider{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    flex-shrink: 0;
+    gap: 20px;
+    animation: train 40s infinite linear;
+    padding: 0 0vw;
+}
+.sec8-5 .carousal .slider .box{
+    background: var(--inner-img);
+    width: 400px;
+    aspect-ratio: 6/7;
+    background-position: center;
+    background-size: cover;
+    border-radius: 30px;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    padding: 30px 20px;
+    border: 2px solid hsl(240, 15%, 20%);
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+.sec8-5 .carousal .slider .box::before{
+    height: 50%;
+    width: 100%;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    z-index: -1;
+}
+.sec8-5 .carousal .slider .box .left p, .sec8-5 .carousal .slider .box .right p{
+    z-index: 3;
+    color: hsl(0, 0%, 80%);
+}
+.sec8-5 .carousal .slider .box .left h4{
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+.sec8-5 .carousal .slider .box .right p{
+    background-color: hsla(0, 0%, 57%, 0.192);
+    padding: 7px 9px;
+    margin: 5px 0;
+    width: max-content;
+    border: 1px solid hsla(0, 0%, 100%, 0.05);
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+}
+.sec8-5 .carousal .slider .box .right p:last-child{
+    margin-bottom: 0;
 }
 .sec8{
     display: flex;
@@ -976,7 +1056,7 @@ header nav #menu{
     align-items: center;
     justify-content: center;
     max-width: 1240px;
-    width: 100%;
+    width: 90%;
     position: relative;
     padding: 60px 0;
     border-radius: 20px;
@@ -1101,7 +1181,7 @@ textarea{
     border: 1px solid hsl(240, 15%, 20%);
     cursor: pointer;
 }
-.sec10 .alert-bg .alert button svg:hover{
+.sec10 .alert-bg .alert button:hover svg{
     fill: #fff;
 }
 footer{
@@ -1293,8 +1373,9 @@ footer .bottom .social{
         font-size: 14px;
         font-family: "DM Sans";
     }
-        .sec7 .container{
+    .sec7 .container{
         gap: 200px;
+        padding: 50px 20px;
     }
     .sec7 .container .st{
         width: 100%;
@@ -1383,6 +1464,9 @@ footer .bottom .social{
     .sec10 .container #right h4{
         display: none;
     }
+    .sec8-5 .carousal{
+        -webkit-mask-image: linear-gradient(to left, transparent 0%, black 10%, black 90%, transparent 100%);
+    }
 }
     /* Media query Tablet devices */
 @media (min-width: 602px) and (max-width: 900px) {
@@ -1453,6 +1537,7 @@ footer .bottom .social{
     }
     .sec7 .container{
         gap: 200px;
+        padding: 50px 10vw;
     }
     .sec7 .container .st{
         width: 100%;

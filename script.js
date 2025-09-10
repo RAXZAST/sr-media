@@ -1,4 +1,4 @@
-    // Page loader
+// Page loader
 const loader = document.querySelector(".page-loader");
 const loadPath = document.querySelector(".page-loader svg path")
 
@@ -91,10 +91,10 @@ const dropdownContainer = document.querySelectorAll(".sec9 .container .dropdown"
 
 dropdownContainer.forEach(function (dropdown) {
     dropdown.addEventListener("click", function (event) {
-        if (event.target.matches("button")) {
-            event.target.classList.toggle("rotate")
-            this.classList.toggle("open");
-        }
+        // Find the button inside the clicked dropdown
+        const btn = dropdown.querySelector(".head button");
+        if (btn) btn.classList.toggle("rotate");
+        this.classList.toggle("open");
     });
     dropdown.setAttribute("style", `--height: ${dropdown.scrollHeight + 8}px; transition: 0.3s;`)
 })
