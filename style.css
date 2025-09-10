@@ -509,7 +509,7 @@ header nav #menu{
     flex-direction: column;
     gap: 50px;
     position: relative;
-    min-width: 70vw;
+    width: clamp(300px, 100vw, 900px);
     overflow: hidden;
     z-index: 2;
 }
@@ -903,6 +903,7 @@ header nav #menu{
 }
 .sec8-5 .carousal .slider .box .right p:last-child{
     margin-bottom: 0;
+    color: hsl(0, 0%, 80%);
 }
 .sec8{
     display: flex;
@@ -994,13 +995,22 @@ header nav #menu{
     width: clamp(400px, 90vw, 1000px);
     margin-top: 50px;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: flex-start;
     justify-content: center;
+    position: relative;
+    gap: 5px;
+}
+.sec9 .container .left, .sec9 .container .right{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 .sec9 .container .dropdown{
     background: linear-gradient(to top, var(--bg-color), hsl(240, 15%, 7%));
-    width: 45%;
+    width: 95%;
     flex-shrink: 0;
     margin: 10px;
     overflow: hidden;
@@ -1090,10 +1100,10 @@ header nav #menu{
     margin-bottom: 10px;
 }
 .sec10 .container #right input, .sec10 .container #right textarea{
-    background: linear-gradient(to top, var(--bg-color), hsl(240, 15%, 7%));
+    background: linear-gradient(to top, var(--bg-color), hsl(240, 15%, 10%));
     width: 100%;
     padding: 10px 15px;
-    border: 1px solid hsl(240, 15%, 10%);
+    border: 2px solid hsl(240, 15%, 15%);
     border-radius: 5px;
     resize: none;
     outline-color: var(--primary-color);
@@ -1659,5 +1669,13 @@ footer .bottom .social{
     }
     #horizontal #side a{
         padding: 5px;
+    }
+    .sec9 .container{
+        flex-direction: column;
+        gap: 0;
+        width: clamp(250px, 90vw, 600px);
+    }
+    .sec9 .container .left, .sec9 .container .right{
+        width: 100%;
     }
 }
