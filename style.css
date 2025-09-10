@@ -698,7 +698,7 @@ header nav #menu{
 .sec7 .container{
     background-color: transparent;
     width: 100vw;
-    padding: 50px clamp(350px, 10vw, 500px);
+    padding: 50px clamp(200px, 10vw, 500px);
     margin-top: 100px;
     display: flex;
     flex-direction: column;
