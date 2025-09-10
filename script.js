@@ -114,28 +114,31 @@ let emailData;
 let serviceTypeData;
 let messageData;
 
+let messageSuccessHint = false;
+
 bookButton.onclick = function () {
-    let emailContain = email.value.includes("@")
-    if (userName.value == "" || email.value == "" || serviceType.value == "" || message.value == "" || emailContain == false) {
-        if (userName.value == "") {
-            userName.classList.add("wrong")
-        }if (email.value == "" || emailContain == false) {
-            email.classList.add("wrong")
-        }if (serviceType.value == "") {
-            serviceType.classList.add("wrong")
-        }if (message.value == "") {
-            message.classList.add("wrong")
+    if (messageSuccessHint == false) {
+        let emailContain = email.value.includes("@")
+        if (userName.value == "" || email.value == "" || serviceType.value == "" || message.value == "" || emailContain == false) {
+            if (userName.value == "") {
+                userName.classList.add("wrong")
+            }if (email.value == "" || emailContain == false) {
+                email.classList.add("wrong")
+            }if (serviceType.value == "") {
+                serviceType.classList.add("wrong")
+            }if (message.value == "") {
+                message.classList.add("wrong")
+            }
+        } else {
+            alertF.style = "display: flex"
+            bookButton.style = "filter: grayscale(50%); opacity: 0.5; pointer-events: visible; cursor: not-allowed !important;"
+            messageSuccessHint = true;
+                // All inputs data for Backend developer
+            nameData = userName.value.trim();
+            emailData = email.value.trim();
+            serviceTypeData = serviceType.value.trim();
+            messageData = message.value.trim();
         }
-
-    } else {
-        alertF.style = "display: flex"
-        bookButton.style = "filter: grayscale(50%); opacity: 0.5; pointer-events: none; cursor: not-allowed;"
-
-            // All inputs data for Backend developer
-        nameData = userName.value.trim();
-        emailData = email.value.trim();
-        serviceTypeData = serviceType.value.trim();
-        messageData = message.value.trim();
     }
 }
 
