@@ -353,6 +353,7 @@ header nav #menu{
 }
 .sec3 .slider{
     width: 90vw;
+    max-width: 1440px;
     margin: 70px 0;
     display: flex;
     align-items: center;
@@ -371,6 +372,7 @@ header nav #menu{
 .sec3 .slider .feedback{
     background-color: hsl(240, 15%, 10%);
     width: 40vw;
+    max-width: 600px;
     padding: 40px;
     display: flex;
     flex-direction: column;
@@ -475,6 +477,7 @@ header nav #menu{
     grid-auto-rows: minmax(150px, 1fr);
     gap: 30px;
     width: 100vw;
+    max-width: 1440px;
     align-content: center;
     justify-items: center;
     padding: 10px clamp(20px, 5vw, 50px);
@@ -695,7 +698,7 @@ header nav #menu{
 .sec7 .container{
     background-color: transparent;
     width: 100vw;
-    padding: 50px 10vw;
+    padding: 50px clamp(350px, 10vw, 500px);
     margin-top: 100px;
     display: flex;
     flex-direction: column;
@@ -964,11 +967,16 @@ header nav #menu{
 .sec10{
     width: 100vw;
     padding: 100px clamp(50px, 10vw, 250px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .sec10 .container{
     display: flex;
     align-items: center;
     justify-content: center;
+    max-width: 1240px;
+    width: 100%;
     position: relative;
     padding: 60px 0;
     border-radius: 20px;
@@ -1093,6 +1101,9 @@ textarea{
     border: 1px solid hsl(240, 15%, 20%);
     cursor: pointer;
 }
+.sec10 .alert-bg .alert button svg:hover{
+    fill: #fff;
+}
 footer{
     display: flex;
     width: 100vw;
@@ -1163,6 +1174,7 @@ footer .bottom .social{
     }
     .sec1 h1 {
         width: 100%;
+        margin-top: 130px;
     }
     .sec1 .video {
         width: 500px;
@@ -1253,6 +1265,7 @@ footer .bottom .social{
     }
     .sec1 .video{
         width: 90vw;
+        margin: 50px 0 30px 0;
     }
     .sec5 .container .action{
         flex-direction: column;
@@ -1315,6 +1328,9 @@ footer .bottom .social{
     }
     .sec7 .container #st4 .elem{
         width: 100% !important;
+    }
+    .sec9{
+        padding: 50px 0;
     }
     .sec9 .container{
         flex-direction: column;
