@@ -39,10 +39,19 @@
                 <a href="#case"><li>Case Study</li></a>
                 <a href="#process"><li>Process</li></a>
             </ul>
-            <a href="#"><button>Book a Call</button></a>
+            <a href="#book"><button>Book a Call</button></a>
             <button id="menu">
                 <svg height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 6H20M4 12H20M4 18H20" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
             </button>
+            <div id="horizontal">
+                <div id="side">
+                    <a href="#review"><li>Review</li></a>
+                    <a href="#work"><li>Work</li></a>
+                    <a href="#case"><li>Case Study</li></a>
+                    <a href="#process"><li>Process</li></a>
+                    <a href="#book"><button>Book a Call</button></a>
+                </div>
+            </div>
         </nav>
     </header>
     <section class="sec1">
@@ -61,7 +70,7 @@
                 <p style="color: var(--secondary-text);">Our Clients Speak for Us</p>
             </div>
         </div>
-        <a href="#"><button>Book a Call <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <a href="#book"><button>Book a Call <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 0V2H0V0H12Z" fill="white"/>
                     <path d="M12 12H10V0H12V12Z" fill="white"/>
                     <path d="M10.4853 0L11.8995 1.41421L1.47403 11.8397L0.0598146 10.4255L10.4853 0Z" fill="white"/></svg>
@@ -218,11 +227,13 @@
                         <p style="color: var(--secondary-text);">Product manager</p>
                     </div>
                 </div>
-                <button>Book a Call <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <a href="#book">
+                    <button>Book a Call <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 0V2H0V0H12Z" fill="white"/>
                     <path d="M12 12H10V0H12V12Z" fill="white"/>
                     <path d="M10.4853 0L11.8995 1.41421L1.47403 11.8397L0.0598146 10.4255L10.4853 0Z" fill="white"/></svg>
                 </button>
+                </a>
             </div>
             <div class="bottom">
                 <div class="analytics">
@@ -316,11 +327,13 @@
                 </div>
             </div>
         </div>
-        <button>Book a 30-Min Call <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <a href="#book">
+            <button>Book a 30-Min Call <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 0V2H0V0H12Z" fill="white"/>
             <path d="M12 12H10V0H12V12Z" fill="white"/>
             <path d="M10.4853 0L11.8995 1.41421L1.47403 11.8397L0.0598146 10.4255L10.4853 0Z" fill="white"/></svg>
         </button>
+        </a>
     </section>
     <section class="sec7" id="process">
         <p style="margin-bottom: 5px; font-weight: bold; text-transform: uppercase;">our process>
@@ -437,11 +450,13 @@
                 <span></span>
             </div>
         </div>
-        <button>Book a 30-Min Call <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <a href="#book">
+            <button>Book a 30-Min Call <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 0V2H0V0H12Z" fill="white"/>
             <path d="M12 12H10V0H12V12Z" fill="white"/>
             <path d="M10.4853 0L11.8995 1.41421L1.47403 11.8397L0.0598146 10.4255L10.4853 0Z" fill="white"/></svg>
         </button>
+        </a>
     </section>
     <section class="sec8">
         <p style="margin-bottom: 5px; font-weight: bold; text-transform: uppercase;">Core services</p>
@@ -585,7 +600,7 @@
             </div>
         </div>
     </section>
-    <section class="sec10">
+    <section class="sec10" id="book">
         <div class="container">
             <img src="media/assets/fx-glow.webp" alt="">
             <div class="box" id="left">
@@ -593,12 +608,12 @@
                 <h2 style="font-weight: 400; text-align: center; line-height: 40px;"><div style="color: var(--secondary-text); font-family: 'Lexend Mega';">Let’s level up</div>Your Business!</h2>
             </div>
             <div class="box" id="right">
-                <h4>Contact Us</h4>
-                <input type="text" placeholder="Full name">
-                <input type="email" placeholder="Email address">
-                <input type="text" placeholder="Service type">
-                <textarea placeholder="Your message" name="" id=""></textarea>
-                <button type="submit">Book Call <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <h4>Book a Call</h4>
+                <input id="name" type="text" placeholder="Full name">
+                <input id="email" type="email" placeholder="Email address">
+                <input id="service-type" type="text" placeholder="Service type">
+                <textarea id="message" placeholder="Your message" name="" id=""></textarea>
+                <button id="book-button" type="submit">Book Call <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 0V2H0V0H12Z" fill="white"/>
             <path d="M12 12H10V0H12V12Z" fill="white"/>
             <path d="M10.4853 0L11.8995 1.41421L1.47403 11.8397L0.0598146 10.4255L10.4853 0Z" fill="white"/></svg></button>
@@ -606,9 +621,9 @@
         </div>
         <div class="alert-bg">
             <div class="alert">
-                <p>Thank you! Your call has been booked successfully. We’ll reach out soon.</p>
+                <h4>Thank you! Your call has been booked successfully. We’ll reach out soon.</h4>
                 <button>
-                    <svg height="24" fill="var(--secondary-text)" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M0 14.545L1.455 16 8 9.455 14.545 16 16 14.545 9.455 8 16 1.455 14.545 0 8 6.545 1.455 0 0 1.455 6.545 8z" fill-rule="evenodd"></path> </g></svg>
+                    <svg height="18" fill="var(--secondary-text)" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M0 14.545L1.455 16 8 9.455 14.545 16 16 14.545 9.455 8 16 1.455 14.545 0 8 6.545 1.455 0 0 1.455 6.545 8z" fill-rule="evenodd"></path> </g></svg>
                 </button>
             </div>
         </div>

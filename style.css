@@ -63,7 +63,7 @@ img{
     left: 50%;
     transform: translate(-50%, -50%);
     background: var(--bg-color);
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     transition: 0.3s;
@@ -256,11 +256,10 @@ header nav #menu{
     border-radius: 20px;
 }
 .sec1 .video #play{
-    height: 100px;
+    height: 60px;
     width: 100px;
-    background: linear-gradient(to top, hsla(0, 0%, 100%, 0.5), hsla(0, 0%, 100%, 0.2));
-    border: 3px solid var(--secondary-text);
-    border-radius: 50%;
+    background: linear-gradient(to top, var(--primary-color), var(--secondary-color));
+    border-radius: 15px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -270,6 +269,7 @@ header nav #menu{
     align-items: center;
     justify-content: center;
     transition: 0.3s;
+    border: none;
 }
 .sec1 .video #play #play-pause-icon{
     clip-path: polygon(100% 50%, 10% 0, 10% 100%);
@@ -358,6 +358,7 @@ header nav #menu{
     align-items: center;
     justify-content: flex-start;
     overflow-x: auto;
+    overflow-y: hidden;
     gap: 20px;
     position: relative;
     -webkit-mask-image: linear-gradient(to left, transparent 0%, black 20%, black 80%, transparent 100%);
@@ -769,6 +770,7 @@ header nav #menu{
     border-radius: 10px;
     color: hsla(0, 0%, 100%, 0.7);
     margin: 0;
+    pointer-events: none;
 }
 .sec7 .container .st .elem{
     height: 200px;
@@ -961,7 +963,7 @@ header nav #menu{
 }
 .sec10{
     width: 100vw;
-    padding: 100px 250px;
+    padding: 100px clamp(50px, 10vw, 250px);
 }
 .sec10 .container{
     display: flex;
@@ -1002,7 +1004,7 @@ header nav #menu{
 .sec10 .container #right input, .sec10 .container #right textarea{
     background: linear-gradient(to top, var(--bg-color), hsl(240, 15%, 7%));
     width: 100%;
-    padding: 10px 20px;
+    padding: 10px 15px;
     border: 1px solid hsl(240, 15%, 10%);
     border-radius: 5px;
     resize: none;
@@ -1010,9 +1012,14 @@ header nav #menu{
     outline: none;
     color: var(--text-color);
     caret-color: var(--primary-color);
+    transition: 0.3s;
 }
 .sec10 .container #right input::placeholder, textarea::placeholder{
     color: var(--secondary-text);
+    transition: 0.3s;
+}
+.sec10 .container #right .wrong::placeholder{
+    color: #ff0000 !important;
 }
 textarea{
     height: 100px;
@@ -1038,16 +1045,53 @@ textarea{
     width: 100%;
 }
 .sec10 .alert-bg{
-    background-color: rgba(66, 0, 0, 0.336);
+    background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
-    height: 100vw;
+    height: 100vh;
     width: 100vw;
     top: 0;
     left: 0;
     display: none;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: 20;
+    z-index: 5;
+    backdrop-filter: blur(10px);
+    animation: fade 0.5s 1 ease-out forwards;
+}
+.sec10 .alert-bg .alert{
+    background: linear-gradient(to top, var(--bg-color), hsl(240, 15%, 7%));
+    display: flex;
+    padding: 60px 40px;
+    width: clamp(300px, 80vw, 500px);
+    text-align: center;
+    position: relative;
+    border: 1px solid hsl(240, 15%, 10%);
+    border-radius: 20px;
+    animation: fade 0.5s 1 ease-out forwards;
+    opacity: 0;
+}
+@keyframes fade {
+    to {
+        opacity: 1;
+    }
+}
+.sec10 .alert-bg .alert h4{
+    font-weight: 400;
+}
+.sec10 .alert-bg .alert button{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    top: -10px;
+    right: -10px;
+    background-color: hsl(240, 15%, 7%);
+    border: 1px solid hsl(240, 15%, 20%);
+    cursor: pointer;
 }
 footer{
     display: flex;
@@ -1168,12 +1212,16 @@ footer .bottom .social{
     .sec5 .container{
         max-width: 95vw;
     }
+    .sec5 .container a{
+        width: 100% !important;
+    }
     .sec5 .container .bottom{
         flex-direction: column;
         align-items: flex-start;
         justify-content: space-between;
         margin-top: 20px;
         height: 600px;
+        gap: 50px;
     }
     .sec4 .tab-buttons{
         display: flex;
@@ -1194,6 +1242,9 @@ footer .bottom .social{
     }
     .sec4 .visible video{
         width: 90vw;
+    }
+    .sec3{
+        padding-bottom: 0;
     }
     .sec3 .slider{
         width: 100vw;
@@ -1224,6 +1275,47 @@ footer .bottom .social{
         gap: 50px;
         opacity: 1;
     }
+    .sec6 .cards .card .feature p{
+        font-weight: 400;
+        font-size: 14px;
+        font-family: "DM Sans";
+    }
+        .sec7 .container{
+        gap: 200px;
+    }
+    .sec7 .container .st{
+        width: 100%;
+        flex-direction: column;
+        gap: 100px;
+        height: max-content;
+    }
+    .sec7 .container .st .step{
+        left: 90%;
+    }
+    .sec7 .container .line{
+        display: none;
+    }
+    .sec7 .container .st .text, .sec7 .container .st .elem{
+        width: clamp(350px, 50%, 500px);
+    }
+    .sec7 .container .st .text{
+        width: 80%;
+    }
+    .sec7 .container .st .text{
+        gap: 20px;
+    }
+    .sec7 .container .st .elem{
+        height: 200px;
+    }
+    .sec7 .container #st2 .elem{
+        height: 500px !important;
+    }
+    .sec7 button {
+        margin: 50px 0 0px 0;
+    }
+    .sec7 .container #st4 .elem{
+        width: 100% !important;
+    }
     .sec9 .container{
         flex-direction: column;
         align-items: center;
@@ -1253,8 +1345,29 @@ footer .bottom .social{
         display: flex;
         gap: 20px;
     }
+    .sec10{
+        padding: 50px 20px;
+    }
+    .sec10 .container{
+        flex-direction: column;
+        padding: 0;
+        height: max-content;
+    }
+    .sec10 .container .box{
+        width: 100%;
+        padding: 15px 10px;
+    }
+    .sec10 .container #left{
+        height: 200px;
+    }
+    .sec10 .container #right{
+        align-items: center;
+        justify-content: end;
+    }
+    .sec10 .container #right h4{
+        display: none;
+    }
 }
-
     /* Media query Tablet devices */
 @media (min-width: 602px) and (max-width: 900px) {
     header nav{
@@ -1278,6 +1391,11 @@ footer .bottom .social{
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    .sec1 .video{
+        width: 90vw;
+        aspect-ratio: 16 / 9;
+        margin: 150px 0 30px 0;
     }
     .sec4 .visible {
         gap: 15px;
@@ -1303,9 +1421,52 @@ footer .bottom .social{
         width: 90%;
         padding: 70px 30px 30px 30px;
     }
+    .sec5 .container{
+        width: 90vw;
+    }
+    .sec5 .container .bottom{
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+        gap: 30px;
+        height: max-content;
+    }
     .sec6 .cards{
         gap: 50px;
         opacity: 1;
+    }
+    .sec7 .container{
+        gap: 200px;
+    }
+    .sec7 .container .st{
+        width: 100%;
+        flex-direction: column;
+        gap: 100px;
+        height: max-content;
+    }
+    .sec7 .container .st .step{
+        left: 0%;
+    }
+    .sec7 .container .line{
+        left: 10vw;
+    }
+    .sec7 .container .st .text, .sec7 .container .st .elem{
+        width: clamp(400px, 50%, 500px);
+    }
+    .sec7 .container .st .text{
+        width: 50%;
+    }
+    .sec7 .container .st .text{
+        gap: 20px;
+    }
+    .sec7 .container .st .elem{
+        height: 200px;
+    }
+    .sec7 .container #st2 .elem{
+        height: 500px !important;
+    }
+    .sec7 .container #st4 .elem{
+        width: 85% !important;
     }
     .sec9 .container{
         flex-direction: column;
@@ -1314,5 +1475,88 @@ footer .bottom .social{
     }
     .sec9 .container .dropdown{
         width: 90%;
+    }
+    .sec10{
+        padding: 50px 50px;
+    }
+    .sec10 .container{
+        flex-direction: column;
+        padding: 60px 0;
+        border-radius: 20px;
+        z-index: 2;
+        border: 1px solid hsl(240, 15%, 20%);
+        overflow: hidden;
+    }
+    .sec10 .container .box{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .sec10 .container #right input, .sec10 .container #right textarea{
+        width: 90%;
+    }
+    .sec10 .container #right{
+        align-items: center;
+    }
+    .sec10 .container #right button{
+        padding: 13px 25px;
+        border-radius: 10px;
+        background: linear-gradient(to top, var(--primary-color), var(--secondary-color));
+        color: var(--text-color);
+        outline: none;
+        border: 1px solid hsla(0, 0%, 100%, 0.2);
+        border-top-width: 0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        transition: 0.3s;
+        font-weight: bold;
+        width: 90%;
+    }
+}
+
+#horizontal{
+    display: none;
+}
+    /* Responsive nav bar */
+@media (max-width: 900px){
+    #horizontal{
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: hsla(0, 0%, 0%, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.3s;
+    }
+    #horizontal #side{
+        background: linear-gradient(to left, var(--bg-color), hsl(240, 15%, 7%));
+        height: 100vh;
+        width: clamp(290px, 90vw, 400px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 70px 50px;
+        gap: 30px;
+        position: relative;
+        border-left: 1px solid hsl(240, 15%, 10%);
+        transform: translateX(100%);
+        transition: 0.3s;
+    }
+    #horizontal #side a button, #horizontal #side a{
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    #horizontal #side a{
+        padding: 5px;
     }
 }

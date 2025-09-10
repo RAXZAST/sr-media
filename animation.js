@@ -84,7 +84,7 @@ gsap.from("footer *", {
 
     // Video container rotate on scroll animation
 gsap.from(".video", {
-    transform: "rotateX(40deg)",
+    transform: "rotateX(20deg)",
     scrollTrigger: {
         scrub: 1,
         scroller: "body",
