@@ -317,6 +317,42 @@ header nav #menu{
     align-items: center;
     justify-content: center;
     margin: 70px 0;
+    position: relative;
+}
+.sec2 .text-container .cards{
+    width: 100vw;
+    position: absolute;
+    top: unset;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35vw;
+    opacity: 0;
+}
+.sec2 .text-container .cards .card img{
+    height: 80px;
+    object-fit: cover;
+    width: max-content;
+}
+.sec2 .text-container .cards .card:nth-child(1) img:nth-child(2){
+    rotate: -10deg;
+    margin-left: 50px;
+}
+.sec2 .text-container .cards .card:nth-child(1) img:nth-child(1){
+    rotate: 10deg;
+}
+.sec2 .text-container .cards .card:nth-child(2) img:nth-child(2){
+    rotate: 10deg;
+}
+.sec2 .text-container .cards .card:nth-child(2) img:nth-child(1){
+    rotate: -10deg;
+    margin-left: 50px;
+}
+.sec2 .text-container .cards .card{
+    display: flex;
+    flex-direction: column;
 }
 .sec2 .text-container h2{
     font-weight: 400;
@@ -364,7 +400,12 @@ header nav #menu{
     position: relative;
     -webkit-mask-image: linear-gradient(to left, transparent 0%, black 20%, black 80%, transparent 100%);
     padding: 0 50px;
-    scroll-snap-type: x mandatory;
+    position: relative;
+}
+.swiper-wrapper{
+    display: flex;
+    align-items: center;
+    width: max-content;
 }
 .sec3 .slider::-webkit-scrollbar{
     display: none;
@@ -1677,5 +1718,8 @@ footer .bottom .social{
     }
     .sec9 .container .left, .sec9 .container .right{
         width: 100%;
+    }
+    .sec2 .text-container .cards{
+        display: none;
     }
 }

@@ -474,3 +474,17 @@ gsap.from(".sec7 .st #text5 *", {
         trigger: ".sec7 .st #text5 *",
     }
 })
+
+    // Section 2 cards move animation on scrool
+gsap.to(".sec2 .text-container .cards", {
+    gap: "50vw",
+    opacity: 1,
+    ease: "linear",
+    scrollTrigger: {
+        scroller: "body",
+        trigger: ".sec2 .text-container .cards",
+        scrub: 1,
+        start: "top 90%",
+        end: "top: 70%",
+    }
+})

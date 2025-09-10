@@ -168,3 +168,17 @@ closeNav.onclick = function () {
     nav.style = "transform: translateX(100%) !important";
     closeNav.style = "opacity: 0 !important; pointer-events: none"
 }
+
+    // Swiper
+
+document.addEventListener("DOMContentLoaded", function () {
+  new Swiper('.sec3 .slider.swiper', {
+    slidesPerView: 2,
+    spaceBetween: 32,
+    loop: true,
+    allowTouchMove: true, // enables mouse drag/swipe
+    simulateTouch: true,
+    grabCursor: true,
+    // No navigation, no pagination
+  });
+});
