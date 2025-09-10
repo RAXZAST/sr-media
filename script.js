@@ -132,8 +132,13 @@ bookButton.onclick = function () {
         } else {
             alertF.style = "display: flex"
             bookButton.style = "filter: grayscale(50%); opacity: 0.5; pointer-events: visible; cursor: not-allowed !important;";
-            bookButton.setAttribute("title", "You have already booked");
+            bookButton.setAttribute("data-tooltip", "You have already booked a call");
+            userName.setAttribute("readOnly", "");
+            email.setAttribute("readOnly", "");
+            serviceType.setAttribute("readOnly", "");
+            message.setAttribute("readOnly", "");
             messageSuccessHint = true;
+
                 // All inputs data for Backend developer
             nameData = userName.value.trim();
             emailData = email.value.trim();

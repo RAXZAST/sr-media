@@ -1235,6 +1235,31 @@ textarea{
 .sec10 .alert-bg .alert button:hover svg{
     fill: #fff;
 }
+[data-tooltip] {
+    position: relative;
+}
+[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%; /* Position above the element */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    border: 1px solid hsl(240, 15%, 30%);
+    padding: 8px 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 999; /* Ensure it appears above other content */
+}
+
+[data-tooltip]:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
 footer{
     display: flex;
     width: 100vw;
