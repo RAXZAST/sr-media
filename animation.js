@@ -8,14 +8,14 @@ window.addEventListener("load", function () {
     })
 })
 
-gsap.from(".sec2 *", {
+gsap.from(".sec2 .review-container *", {
     transform: "translateY(20%)",
     opacity: 0,
     stagger: 0.05,
     duration: 1.5,
     scrollTrigger:{
         scroller: "body",
-        trigger: ".sec2 *",
+        trigger: ".sec2 .review-container *",
     }
 })
 
@@ -247,20 +247,6 @@ const observer3 = new IntersectionObserver((e) => {
 });
 
 observer3.observe(cardsContainer)
-    
-    // Section 7 path trail animation on scroll
-/
-gsap.to(".sec7 .container .line span", {
-    top: "calc(100% - 100px)",
-    ease: "linear",
-    scrollTrigger: {
-        scroller: "body",
-        trigger: ".sec7 .container .line",
-        scrub: 0,
-        start: "top 50%",
-        end: "bottom 50%"
-    }
-})
 
     // Section 7 All ST animation
         // st1

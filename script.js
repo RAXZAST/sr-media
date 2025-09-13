@@ -188,3 +188,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // No navigation, no pagination
   });
 });
+
+
+
+
+const allSec = document.querySelectorAll("section");
+
+allSec.forEach(function (e) {
+    console.log(e.scrollWidth)
+})
