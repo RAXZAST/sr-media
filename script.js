@@ -163,10 +163,10 @@ bookButton.onclick = function () {
             alertF.style = "display: flex"
             bookButton.style = "filter: grayscale(50%); opacity: 0.5; pointer-events: visible; cursor: not-allowed !important;";
             bookButton.setAttribute("data-tooltip", "You have already booked a call");
-            userName.style = "pointer-events:  none"
-            email.style = "pointer-events:  none"
-            serviceType.style = "pointer-events:  none"
-            message.style = "pointer-events:  none"
+            userName.style = "pointer-events:  none; filter: grayscale(50%); opacity: 0.5;"
+            email.style = "pointer-events:  none; filter: grayscale(50%); opacity: 0.5;"
+            serviceType.style = "pointer-events:  none; filter: grayscale(50%); opacity: 0.5;"
+            message.style = "pointer-events:  none; filter: grayscale(50%); opacity: 0.5;"
             messageSuccessHint = true;
 
                 // All inputs data for Backend developer
