@@ -116,6 +116,36 @@ let messageData;
 
 let messageSuccessHint = false;
 
+    // Enter key to next input focus functionality
+userName.addEventListener("keydown", function(key){
+    if (key.code === "Enter" && userName.value !== "") {
+        email.focus();
+        userName.classList.remove("wrong")
+    } else {
+        userName.classList.add("wrong")
+    }
+})
+email.addEventListener("keydown", function(key){
+    if (key.code === "Enter" && userName.value !== "" && email.value.includes("@")) {
+        serviceType.focus();
+        email.classList.remove("wrong")
+        email.style = "color: var(--text-color)"
+    }
+    else {
+        email.classList.add("wrong")
+        email.style = "color: red"
+    }
+})
+serviceType.addEventListener("keydown", function(key){
+    if (key.code === "Enter" && userName.value !== "") {
+        message.focus();
+        serviceType.classList.remove("wrong")
+    }
+    else {
+        serviceType.classList.add("wrong")
+    }
+})
+
 bookButton.onclick = function () {
     if (messageSuccessHint == false) {
         let emailContain = email.value.includes("@")
@@ -133,10 +163,10 @@ bookButton.onclick = function () {
             alertF.style = "display: flex"
             bookButton.style = "filter: grayscale(50%); opacity: 0.5; pointer-events: visible; cursor: not-allowed !important;";
             bookButton.setAttribute("data-tooltip", "You have already booked a call");
-            userName.setAttribute("readOnly", "");
-            email.setAttribute("readOnly", "");
-            serviceType.setAttribute("readOnly", "");
-            message.setAttribute("readOnly", "");
+            userName.style = "pointer-events:  none"
+            email.style = "pointer-events:  none"
+            serviceType.style = "pointer-events:  none"
+            message.style = "pointer-events:  none"
             messageSuccessHint = true;
 
                 // All inputs data for Backend developer
@@ -148,6 +178,7 @@ bookButton.onclick = function () {
     }
 }
 
+    // Close form success alert
 close.onclick = function () {
     alertF.style = "display: none";
     userName.value = "";
@@ -176,7 +207,6 @@ closeNav.onclick = function () {
 }
 
     // Swiper
-
 document.addEventListener("DOMContentLoaded", function () {
   new Swiper('.sec3 .slider.swiper', {
     slidesPerView: 2,
@@ -189,11 +219,3 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
-
-
-const allSec = document.querySelectorAll("section");
-
-allSec.forEach(function (e) {
-    console.log(e.scrollWidth)
-})
