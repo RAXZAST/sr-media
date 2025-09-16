@@ -126,7 +126,7 @@ userName.addEventListener("keydown", function(key){
     }
 })
 email.addEventListener("keydown", function(key){
-    if (key.code === "Enter" && userName.value !== "" && email.value.includes("@")) {
+    if (key.code === "Enter" && userName.value !== "" && email.value.includes("@" && ".")) {
         serviceType.focus();
         email.classList.remove("wrong")
         email.style = "color: var(--text-color)"
@@ -148,7 +148,7 @@ serviceType.addEventListener("keydown", function(key){
 
 bookButton.onclick = function () {
     if (messageSuccessHint == false) {
-        let emailContain = email.value.includes("@")
+        let emailContain = email.value.includes("@" && ".")
         if (userName.value == "" || email.value == "" || serviceType.value == "" || message.value == "" || emailContain == false) {
             if (userName.value == "") {
                 userName.classList.add("wrong")
